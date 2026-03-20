@@ -1,7 +1,7 @@
 import math
 def calculate_trip():
     try:
-        #Taking input from users
+        #Taking input of coordinates from the user
         a1 = float(input("Enter x-coordintes of origin(in meters): "))
         b1 = float(input("Enter y-coordintes of origin(in meters): "))
         a2 = float(input("Enter x-coordintes of destination(in meters): "))
@@ -11,12 +11,12 @@ def calculate_trip():
         #distance = ((a2-a1)^2 +(b2-b1)^2)^0.5
         distance = math.sqrt((a2-a1)**2 + (b2-b1)**2)
         print(f"\nDistance to destination: {distance:.2f} m")
-        #Calculating time
-        u = float(input("enter initial velocity(in m/s): "))
-        a = float(input("enter acceleration(in m/s^2): "))
+        #Taking input of initial velocity, acceleration and maximum velocity from the user
+        u = float(input("Enter initial velocity(in m/s): "))
+        a = float(input("Enter acceleration(in m/s^2): "))
         v = float(input("Enter maximum velocity(in m/s): "))
 
-        #error handling for negative acceleration
+        #Error handling for negative acceleration and zero initial velocity case
         if a<=0 and u==0:
             print("Error: Acceleration must be positive when initial velocity is zero.")
             return
